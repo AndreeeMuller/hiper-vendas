@@ -1,6 +1,9 @@
 <template>
   <q-page>
-    <ListaClientes :contatos="contatos"></ListaClientes>
+    <ListaClientes :clientes="clientes"></ListaClientes>
+    <q-page-sticky position="bottom-right" :offset="[18, 18]">
+      <q-btn round color="secondary" icon="add" to="/clientes/adicionar" />
+    </q-page-sticky>
   </q-page>
 </template>
 
@@ -14,13 +17,13 @@ export default {
   },
   data () {
     return {
-      contatos: []
+      clientes: []
     }
   },
   mounted () {
     for (let i = 1; i <= 100; i++) {     
-      this.contatos.push({
-        idcontato: i,
+      this.clientes.push({
+        idcliente: i,
         nome: 'André Peil Müller',
         telefone: '41995538267',
         cidade: 'PR - Curitiba',
